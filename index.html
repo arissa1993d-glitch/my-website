@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Chicken Hub — รวมเครื่องมือคำนวณออนไลน์</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320605084659957"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Noto+Sans+Thai:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== BANNERS (ตำแหน่งโฆษณา) ===== -->
+<!-- Right AdSense Banner -->
+<div class="right-ad-wrapper">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:140px;height:600px"
+         data-ad-client="ca-pub-4320605084659957"
+         data-ad-slot="3816871363"
+		 data-adtest="on"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="left-ad-wrapper">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:160px;height:600px"
+         data-ad-client="ca-pub-4320605084659957"
+         data-ad-slot="1012961668"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+<div class="bottom-ad-wrapper">
+    <ins class="adsbygoogle"
+        style="display:inline-block;width:728px;height:90px"
+        data-ad-client="ca-pub-4320605084659957"
+        data-ad-slot="9083023378"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+<!-- ================================== -->
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-icon">C</div>
+      <div class="logo-text">
+        <div class="logo-main">Chicken Hub</div>
+        <div class="logo-sub">รวมเครื่องมือคำนวณยอดนิยมของคนไทย</div>
+      </div>
+    </div>
+    <nav class="top-nav scroll-nav">
+      <button class="nav-btn nav-loan active" data-target="loan"><span class="nav-icon">🏠</span>ผ่อนบ้าน/รถ</button>
+      <button class="nav-btn nav-salary" data-target="salary"><span class="nav-icon">💰</span>เงินเดือนสุทธิ</button>
+      <button class="nav-btn nav-saving" data-target="saving"><span class="nav-icon">📈</span>ดอกเบี้ยทบต้น</button>
+      <button class="nav-btn nav-health" data-target="health"><span class="nav-icon">❤️</span>BMI / BMR</button>
+      <button class="nav-btn nav-split" data-target="split"><span class="nav-icon">👥</span>หารบิล</button>
+      <button class="nav-btn nav-discount" data-target="discount"><span class="nav-icon">🏷️</span>เปอร์เซ็นลดราคา</button>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main">
+  <section class="tools">
+    <div class="container">
+
+      <!-- Loan calculator -->
+      <section id="tool-loan" class="tool-card active theme-blue">
+        <div class="tool-header">
+          <div>
+            <h2>🏠 คำนวณผ่อนบ้าน / รถ</h2>
+            <p>คำนวณค่างวดรายเดือนจากวงเงินกู้ ดอกเบี้ย และระยะเวลาผ่อน</p>
+          </div>
+        </div>
+        <form class="tool-form" id="loan-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>วงเงินกู้ (บาท)</label>
+              <input type="number" id="loan-amount" min="0" step="1000" placeholder="เช่น 1,000,000">
+            </div>
+            <div class="field">
+              <label>ดอกเบี้ยต่อปี (%)</label>
+              <input type="number" id="loan-rate" min="0" step="0.01" placeholder="เช่น 3.5">
+            </div>
+            <div class="field">
+              <label>ระยะเวลาผ่อน (ปี)</label>
+              <input type="number" id="loan-years" min="1" step="1" placeholder="เช่น 20">
+            </div>
+            <div class="field">
+              <label>ระยะเวลาผ่อน (เดือนเพิ่ม)</label>
+              <input type="number" id="loan-months-extra" min="0" step="1" value="0">
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณค่างวด</button>
+            <button type="button" class="btn-ghost" data-reset="loan">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="loan-result">
+          <p class="placeholder">กรอกข้อมูลด้านบนแล้วกด "คำนวณค่างวด"</p>
+        </div>
+      </section>
+
+      <!-- Salary calculator -->
+      <section id="tool-salary" class="tool-card theme-amber">
+        <div class="tool-header">
+          <div>
+            <h2>💰 คำนวณเงินเดือนสุทธิ (ประมาณการ)</h2>
+            <p>ประเมินเงินเดือนสุทธิหลังหักประกันสังคมและภาษีรายได้แบบคร่าว ๆ</p>
+          </div>
+        </div>
+        <form class="tool-form" id="salary-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>เงินเดือนต่อเดือน (บาท)</label>
+              <input type="number" id="salary-gross" min="0" step="100" placeholder="เช่น 30,000">
+            </div>
+            <div class="field">
+              <label>หักประกันสังคม</label>
+              <select id="salary-sso">
+                <option value="auto">คำนวณอัตโนมัติ (5% สูงสุด 750 บาท)</option>
+                <option value="none">ไม่คิดประกันสังคม</option>
+              </select>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณเงินสุทธิ</button>
+            <button type="button" class="btn-ghost" data-reset="salary">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="salary-result">
+          <p class="placeholder">กรอกเงินเดือนแล้วกด "คำนวณเงินสุทธิ"</p>
+        </div>
+      </section>
+
+      <!-- Saving / compound interest -->
+      <section id="tool-saving" class="tool-card theme-green">
+        <div class="tool-header">
+          <div>
+            <h2>📈 คำนวณดอกเบี้ยทบต้น / เงินออม</h2>
+            <p>ดูว่าเงินต้นและเงินออมต่อเดือนของคุณเติบโตเป็นเท่าไหร่เมื่อเวลาผ่านไป</p>
+          </div>
+        </div>
+        <form class="tool-form" id="saving-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>เงินต้นเริ่มต้น (บาท)</label>
+              <input type="number" id="saving-principal" min="0" step="100" placeholder="เช่น 50,000">
+            </div>
+            <div class="field">
+              <label>ออมเพิ่มต่อเดือน (บาท)</label>
+              <input type="number" id="saving-monthly" min="0" step="100" placeholder="เช่น 2,000">
+            </div>
+            <div class="field">
+              <label>ดอกเบี้ยเฉลี่ยต่อปี (%)</label>
+              <input type="number" id="saving-rate" min="0" step="0.01" placeholder="เช่น 4">
+            </div>
+            <div class="field">
+              <label>ระยะเวลาออม (ปี)</label>
+              <input type="number" id="saving-years" min="1" step="1" placeholder="เช่น 10">
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณเงินในอนาคต</button>
+            <button type="button" class="btn-ghost" data-reset="saving">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="saving-result">
+          <p class="placeholder">กรอกข้อมูลด้านบนแล้วกด "คำนวณเงินในอนาคต"</p>
+        </div>
+      </section>
+
+      <!-- Health: BMI / BMR -->
+      <section id="tool-health" class="tool-card theme-pink">
+        <div class="tool-header">
+          <div>
+            <h2>❤️ คำนวณค่า BMI / BMR</h2>
+            <p>ใช้สูตรมาตรฐานคำนวณการเผาผลาญพื้นฐานและดัชนีมวลกายของคุณ</p>
+          </div>
+        </div>
+        <form class="tool-form" id="health-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>เพศ</label>
+              <select id="health-gender">
+                <option value="male">ชาย</option>
+                <option value="female">หญิง</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>อายุ (ปี)</label>
+              <input type="number" id="health-age" min="1" max="120" step="1">
+            </div>
+            <div class="field">
+              <label>ส่วนสูง (ซม.)</label>
+              <input type="number" id="health-height" min="50" max="250" step="0.1">
+            </div>
+            <div class="field">
+              <label>น้ำหนัก (กก.)</label>
+              <input type="number" id="health-weight" min="20" max="300" step="0.1">
+            </div>
+            <div class="field full">
+              <label>ระดับกิจกรรม</label>
+              <select id="health-activity">
+                <option value="1.2">นั่งทำงานเป็นหลัก (ออกกำลังกายน้อยมาก)</option>
+                <option value="1.375">ออกกำลังกายเบา ๆ 1–3 วัน/สัปดาห์</option>
+                <option value="1.55">ออกกำลังกายปานกลาง 3–5 วัน/สัปดาห์</option>
+                <option value="1.725">ออกกำลังกายหนัก 6–7 วัน/สัปดาห์</option>
+                <option value="1.9">ออกกำลังกายหนักมาก/ใช้แรงงาน</option>
+              </select>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณ BMI / BMR</button>
+            <button type="button" class="btn-ghost" data-reset="health">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="health-result">
+          <p class="placeholder">กรอกอายุ ส่วนสูง น้ำหนัก แล้วกด "คำนวณ"</p>
+        </div>
+      </section>
+
+      <!-- Split bill -->
+      <section id="tool-split" class="tool-card theme-purple">
+        <div class="tool-header">
+          <div>
+            <h2>👥 คำนวณหารบิล</h2>
+            <p>ช่วยหารค่าใช้จ่ายกับเพื่อนจากยอดรวม ทิป และจำนวนคน</p>
+          </div>
+        </div>
+        <form class="tool-form" id="split-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>ยอดรวมบิล (บาท)</label>
+              <input type="number" id="split-total" min="0" step="1" placeholder="เช่น 1,250">
+            </div>
+            <div class="field">
+              <label>จำนวนคน</label>
+              <input type="number" id="split-people" min="1" step="1" value="2">
+            </div>
+            <div class="field">
+              <label>ทิป (%)</label>
+              <input type="number" id="split-tip" min="0" step="1" value="0">
+            </div>
+            <div class="field">
+              <label>ปัดยอดต่อคน</label>
+              <select id="split-round">
+                <option value="none">ไม่ปัดเศษ</option>
+                <option value="1">ปัดเป็นจำนวนเต็มบาท</option>
+                <option value="10">ปัดเป็นรอบละ 10 บาท</option>
+              </select>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณหารบิล</button>
+            <button type="button" class="btn-ghost" data-reset="split">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="split-result">
+          <p class="placeholder">กรอกยอดบิลและจำนวนคน แล้วกด "คำนวณหารบิล"</p>
+        </div>
+      </section>
+
+      <!-- Discount -->
+      <section id="tool-discount" class="tool-card theme-cyan">
+        <div class="tool-header">
+          <div>
+            <h2>🏷️ คำนวณเปอร์เซ็นลดราคา</h2>
+            <p>ช่วยคำนวณราคาสินค้าหลังลดเปอร์เซ็น และจำนวนเงินที่ลดไป</p>
+          </div>
+        </div>
+        <form class="tool-form" id="discount-form">
+          <div class="field-grid">
+            <div class="field">
+              <label>ราคาปกติ (บาท)</label>
+              <input type="number" id="discount-original" min="0" step="0.01" placeholder="เช่น 1,000">
+            </div>
+            <div class="field">
+              <label>ส่วนลด (%)</label>
+              <input type="number" id="discount-rate" min="0" max="100" step="0.01" placeholder="เช่น 25">
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button type="submit" class="btn-primary">คำนวณราคาหลังลด</button>
+            <button type="button" class="btn-ghost" data-reset="discount">ล้างค่า</button>
+          </div>
+        </form>
+        <div class="tool-result fancy-result" id="discount-result">
+          <p class="placeholder">กรอกราคาปกติและเปอร์เซ็นส่วนลด แล้วกด "คำนวณราคาหลังลด"</p>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
